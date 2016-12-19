@@ -14647,7 +14647,7 @@ Grid search allows the user to apply a number of different parameters to a machi
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-When splitting your dataset into training and testing data, there is a tradeoff between the two, as you'd ideally want to maximise both. K-Fold cross validation splits the dataset into K equally sized pieces, then iterates over these pieces, creating a series of K learning experiments. Each piece takes a 'turn' at being the testing set, while the remaining pieces act as the training set. The results of each of these experiments is averaged, and this gives the model performance. The advantage of using this is we effectively have used the entire dataset as both the training and the testing datasets.</p>
+When splitting your dataset into training and testing data, there is a tradeoff between the two, as you'd ideally want to maximise both. K-Fold cross validation splits the dataset into K partitions. We then run K learning experiments, in each experiment taking one of the K partitions as the validation set, and combining the others as the training set. This means that each of the K subsets get a 'turn' at being the test set, and K-1 'turns' at being in the training set. Finally, we take an average of the validation accuracy of each validation experiment to get the overall accuracy of our algorithm.</p>
 <p>We should use cross validation with grid search because if we do not, our grid search may select the parameters that best match only a subset of the data - i.e. being too specific to only one sector of the overall data and not generalising well.</p>
 
 </div>
@@ -14781,7 +14781,7 @@ When splitting your dataset into training and testing data, there is a tradeoff 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-Optimal model max_depth is 4</p>
+Optimal model max_depth is 4, this matches the max_depth selected earlier in question 6.</p>
 
 </div>
 </div>
